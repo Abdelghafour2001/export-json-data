@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <style>
+        body {
+            font-size:15px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 50px;
+        }
+        #form{
+            position: fixed;
+            margin-top: 50px;
+            margin-left: 200px;
+            border: 1px solid rgba(31, 24, 24, 0.877);
+            padding:15px;
+            border-radius: 5px;
+
+        }
+        #form input {
+            padding: 12px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            outline: none;
+            display: inline;
+            width:90%;
+            margin:5px;
+        }
+        #form #pwd1{
+            width: 30%;
+        }
+        #form #pwd2{
+            width: 30%;
+        }
+        input:focus {
+            border-color: rgba(82, 168, 236, 0.75);
+            box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+        }
+        .incorrect {
+            border-color: rgba(236, 82, 82, 0.75);
+            box-shadow: 0 0 8px rgba(236, 82, 82, 0.5);
+        }
+        #form #save {
+            font-size: large;
+            color: white;
+            background-color: black;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="form">
+            <h2>Register Form :</h2>
+            <form name="register" id="myForm"  onsubmit="validate();">
+                <table>
+                    <tr><td>Login :</td><td><input type="text" name="email" id="email" placeholder="email@example.xyz"></td></tr>
+                    <tr><td>Password :</td><td><input name="pwd1" id="pwd1" type="password" />&nbspConfirmation :<input name="pwd2" id="pwd2" type="password" /></td></tr>
+                    <tr><td>Telephone :</td><td colspan="2"><input name="phone" id="phone" type="text" placeholder="06********"/></td></tr>
+                    <tr><td>Nom :</td><td colspan="2"><input name="nom" id="nom" type="text" /></td></tr>
+                    <tr><td>Prenom :</td><td><input name="prenom" id="prenom" type="text" /></td></tr>
+                    <tr><td colspan="2"><input type="submit" id="save" width="100%" value="Save"></td></tr>
+                </table>
+            </form>
+        </div>
+        <script>
+                   check = {};
+                    check['mail'] = function () {
+                    var mail= document.getElementById("email");
+                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail.value)) {
+                    return true;
+                } else {
+                    alert("Adresse email invalide!")
+                    return false;
+                }
+            };
+            check['pwd1'] = function () {
+                var pwd1 = document.getElementById('pwd1');
+                if (pwd1.value.length >= 6) {
+                    return true;
+                } else {
+                    alert("Mot de passe insuffisant!");
+                    return false;
+                }
+            };
+            check['pwd2'] = function () {
+                var pwd1 = document.getElementById('pwd1'),
+                    pwd2 = document.getElementById('pwd2');
+                if (pwd1.value == pwd2.value && pwd2.value != '') {
+                    return true;
+                } else {
+                    alert("Mot de passe incorrect!");
+                     return false;
+                }}
+                check['phone'] = function () {
+                var phone = document.getElementById('phone');
+                if (/^0[5-7]{1}[0-9]{8}$/.test(phone.value)) {
+                    return true;
+                } else {
+                    alert("Syntaxe telephone incorrecte!");
+                     return false;
+                }}
+            function validate(){
+                var result = true;
+                    for (var i in check) {
+                        result = check[i](i) && result;
+                    }
+                    if (result) {
+                        alert('Le formulaire est bien rempli.');
+                        return true;
+                    }
+                    else{
+                    return false;}
+            }
+        </script>
+    </body>
+</html>

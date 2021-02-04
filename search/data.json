@@ -1,0 +1,5 @@
+{"books":[
+        {"id":"1","titre":"Informatique - Bac - Pro gestion administration","editeur":"Nathan","date":"01/04/2013","prix":"17.50","poster":"livre1.png"},
+       {"id":"2","titre":"Aide memoire de droit a l'usage des respons","editeur":"Concours prepa","date":"20/04/2012","prix":"17.50","poster":"livre2.png"},
+       {"id":"3","titre":"Cahier d'activités: les métiers du Web","editeur":"Parcours","date":"01/02/2012","prix":"17.50","poster":"livre3.png"},
+       {"id":"4","titre":"Cahier d'activité B2i: brevet informatique","editeur":"B2i","date":"15/05/2015","prix":"17.50","poster":"livre4.png"}]}

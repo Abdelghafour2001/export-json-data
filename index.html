@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My LibSchool</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>    
+    </head>
+    <body >
+        <!--Toute la barre de navigation-->
+        <div id="nav-bar">
+            <!--La partie a gauche avec le logo et nav pages-->
+                    <span id="gauche">
+                        <ul>
+                            <li><a href="index.html"><h1>My LibSchool</h1></a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">My favourite</a></li>
+                        </ul>
+                    </span>
+            <!--La partie a droite avec les buttons-->
+                    <span id="droite">
+                            <input type="text" id="search_bar"  placeholder="Search..."  >
+                            <input type="button" id="btn-rech" value="Search" class="btn" >
+                            <input type="button" name="btn-login" value="Login" class="btn">
+                            <input type="button" name="btn-register" value="Register" class="btn" onclick="window.location='/register/register.html'">
+                    </span>    
+        </div> 
+        <div id="display-area"></div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
